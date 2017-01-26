@@ -1,9 +1,9 @@
-FROM ubuntu:16.04
+FROM debian:latest
 
-RUN apt-get update && apt-get upgrade && apt-get install git wget make libncurses-dev flex bison gperf python python-serial
-RUN wget https://dl.espressif.com/dl/xtensa-esp32-elf-linux64-1.22.0-61-gab8375a-5.2.0.tar.gz ~
+RUN apt-get update && apt-get -y upgrade && apt-get -y install git wget make libncurses-dev flex bison gperf python python-serial
+RUN wget https://dl.espressif.com/dl/xtensa-esp32-elf-linux64-1.22.0-61-gab8375a-5.2.0.tar.gz
 
-WORKDIR ~/esp32
+WORKDIR /esp32
 
 RUN tar -xzf ../xtensa-esp32-elf-linux64-1.22.0-61-gab8375a-5.2.0.tar.gz
 RUN export PATH=$PATH:$HOME/esp32/xtensa-esp32-elf/bin

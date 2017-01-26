@@ -1,1 +1,1 @@
-docker run -it --privileged -v /dev:/dev ./
+docker run -it --privileged -v /dev:/dev nodebotanist-esp32
